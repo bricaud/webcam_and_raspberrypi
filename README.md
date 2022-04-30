@@ -42,6 +42,23 @@ https://stackoverflow.com/questions/29583533/videocapture-open0-wont-recognize-p
 
 Make also sure the interface for (legacy) video is enabled in the raspberry Pi configuration `sudo raspi-config` -> 'Interfacing Options' -> 'Camera'
 
-### Scripts
+## Python Scripts
 
-`test_video.py` is the first and simplest script you can run to test if Python with opencv can access your camera and display it.
+### Face detection
+You will need the following python modules:
+* Open-cv:
+ ```
+pip install opencv-python
+pip install opencv-contrib-python
+```
+
+The script `test_video.py` is the first and simplest script you can run to test if Python with opencv can access your camera and display it.
+You can record your face for training using `record_user_face.py`
+after recording one or several faces, run `train_face_recognition.py` to train the recognition process
+When it has been trained, run `face_detector.py`.
+ 
+### Face recognition with Deepface
+
+You will nee the deepFace module (`pip install deepface`)
+
+You can test the webcam stream with the python script `deepFace_stream.py`. On the video, you will get emotion (side), estimated age and gender (M/W) (top) of each face.

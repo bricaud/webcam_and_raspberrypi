@@ -29,7 +29,7 @@ def getImagesAndLabels(data_dir, face_detector):
 
 if __name__ == '__main__':
     # Create target Directory if it doesn't exist
-    detection.create_dir(detection.data_dir)
+    #detection.create_dir(detection.data_dir)
     detection.create_dir(detection.trained_model_dir)
     # initializing face recognition methods
     face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
