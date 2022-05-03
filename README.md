@@ -1,4 +1,4 @@
-# Code for object and face detection with a webcam and a Raspeberry pi
+# Code for object and face detection with a webcam and a Raspberry Pi
 
 The repository contains Python code for face detection, object recognition and other machine learning application using a webcam.
 A part of the demos are made to run on a Raspberry Pi (3 or 4).
@@ -42,6 +42,14 @@ https://stackoverflow.com/questions/29583533/videocapture-open0-wont-recognize-p
 
 Make also sure the interface for (legacy) video is enabled in the raspberry Pi configuration `sudo raspi-config` -> 'Interfacing Options' -> 'Camera'
 
+### Raspberry Pi and Tensorflow
+
+It is not straightforward to install tensorflow on Rasberry Pi. Installing with pip does not work. You can find an alternative way described on the Qengineering website: 
+[https://qengineering.eu/install-tensorflow-2.7-on-raspberry-64-os.html](https://qengineering.eu/install-tensorflow-2.7-on-raspberry-64-os.html)
+They have a github repo with wheels versions of Tensorflow for Raspberry Pi:
+[https://github.com/Qengineering/TensorFlow-Raspberry-Pi_64-bit](https://github.com/Qengineering/TensorFlow-Raspberry-Pi_64-bit)
+Download the version you need and run `pip install downloaded_wheelfile.whl`. To check your version of Linux on the Raspberri Pi, just run`cat /etc/os-release`, the cpu architecture is given by `uname -a` and Python version by `python --version`.
+
 ## Python Scripts
 
 ### Face detection
@@ -59,6 +67,6 @@ When it has been trained, run `face_detector.py`.
  
 ### Face recognition with Deepface
 
-You will nee the deepFace module (`pip install deepface`)
+You will need the deepFace module (`pip install deepface`) and Tensorflow installed.
 
 You can test the webcam stream with the python script `deepFace_stream.py`. On the video, you will get emotion (side), estimated age and gender (M/W) (top) of each face.
